@@ -32,6 +32,19 @@ extension API {
         case requestFailed
         case invalidData
         case decodingFailed
+        
+        var message: String {
+            switch self {
+                case .malformedURL:
+                    return "error with URL requested"
+                case .requestFailed:
+                    return "error with request"
+                case .invalidData:
+                    return "invalid data"
+                case .decodingFailed:
+                    return "data decode failed"
+            }
+        }
     }
     
     enum HttpMethod: String {

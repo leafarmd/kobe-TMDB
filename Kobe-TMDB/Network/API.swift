@@ -51,7 +51,7 @@ final class API {
         request.httpMethod = method.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        session.dataTask(with: request) { (data, response, error) in
+        session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 
                 guard error == nil else {
