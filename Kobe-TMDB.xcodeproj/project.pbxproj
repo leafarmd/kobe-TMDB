@@ -103,7 +103,6 @@
 				53C2BE2722E7D54F006C8D0B /* Main.storyboard */,
 				53C2BE2A22E7D552006C8D0B /* Assets.xcassets */,
 				53C2BE2C22E7D552006C8D0B /* LaunchScreen.storyboard */,
-				53C2BE2F22E7D552006C8D0B /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -129,6 +128,7 @@
 		53C2BE2222E7D54F006C8D0B /* Kobe-TMDB */ = {
 			isa = PBXGroup;
 			children = (
+				53C2BE2F22E7D552006C8D0B /* Info.plist */,
 				53C2BE2322E7D54F006C8D0B /* AppDelegate.swift */,
 				533BEA9622E7D71D00C509CA /* Features */,
 				533BEA9522E7D70F00C509CA /* Network */,
