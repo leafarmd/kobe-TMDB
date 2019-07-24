@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		533BEA9822E7D72E00C509CA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BEA9722E7D72E00C509CA /* API.swift */; };
+		533BEA9B22E7D81200C509CA /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BEA9A22E7D81200C509CA /* APIEndpoint.swift */; };
+		533BEA9D22E7D97C00C509CA /* APISupportTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BEA9C22E7D97C00C509CA /* APISupportTypes.swift */; };
+		533BEA9F22E7D9A900C509CA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BEA9E22E7D9A900C509CA /* APIError.swift */; };
+		533BEAA222E7DEC300C509CA /* UpcomingMoviesOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BEAA122E7DEC300C509CA /* UpcomingMoviesOutput.swift */; };
+		533BEAA422E7ED0000C509CA /* MovieDetailOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BEAA322E7ED0000C509CA /* MovieDetailOutput.swift */; };
 		53C2BE2422E7D54F006C8D0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C2BE2322E7D54F006C8D0B /* AppDelegate.swift */; };
 		53C2BE2622E7D54F006C8D0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C2BE2522E7D54F006C8D0B /* ViewController.swift */; };
 		53C2BE2922E7D54F006C8D0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53C2BE2722E7D54F006C8D0B /* Main.storyboard */; };
@@ -26,6 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		533BEA9722E7D72E00C509CA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		533BEA9A22E7D81200C509CA /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		533BEA9C22E7D97C00C509CA /* APISupportTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISupportTypes.swift; sourceTree = "<group>"; };
+		533BEA9E22E7D9A900C509CA /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		533BEAA122E7DEC300C509CA /* UpcomingMoviesOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesOutput.swift; sourceTree = "<group>"; };
+		533BEAA322E7ED0000C509CA /* MovieDetailOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailOutput.swift; sourceTree = "<group>"; };
 		53C2BE2022E7D54F006C8D0B /* Kobe-TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kobe-TMDB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C2BE2322E7D54F006C8D0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53C2BE2522E7D54F006C8D0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +68,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		533BEA9522E7D70F00C509CA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				533BEAA022E7DE4300C509CA /* Output */,
+				533BEA9722E7D72E00C509CA /* API.swift */,
+				533BEA9A22E7D81200C509CA /* APIEndpoint.swift */,
+				533BEA9C22E7D97C00C509CA /* APISupportTypes.swift */,
+				533BEA9E22E7D9A900C509CA /* APIError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		533BEA9622E7D71D00C509CA /* Features */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		533BEAA022E7DE4300C509CA /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				533BEAA122E7DEC300C509CA /* UpcomingMoviesOutput.swift */,
+				533BEAA322E7ED0000C509CA /* MovieDetailOutput.swift */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
 		53C2BE1722E7D54F006C8D0B = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +117,8 @@
 		53C2BE2222E7D54F006C8D0B /* Kobe-TMDB */ = {
 			isa = PBXGroup;
 			children = (
+				533BEA9622E7D71D00C509CA /* Features */,
+				533BEA9522E7D70F00C509CA /* Network */,
 				53C2BE2322E7D54F006C8D0B /* AppDelegate.swift */,
 				53C2BE2522E7D54F006C8D0B /* ViewController.swift */,
 				53C2BE2722E7D54F006C8D0B /* Main.storyboard */,
@@ -198,7 +240,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				53C2BE2622E7D54F006C8D0B /* ViewController.swift in Sources */,
+				533BEAA222E7DEC300C509CA /* UpcomingMoviesOutput.swift in Sources */,
+				533BEA9D22E7D97C00C509CA /* APISupportTypes.swift in Sources */,
+				533BEA9822E7D72E00C509CA /* API.swift in Sources */,
 				53C2BE2422E7D54F006C8D0B /* AppDelegate.swift in Sources */,
+				533BEA9B22E7D81200C509CA /* APIEndpoint.swift in Sources */,
+				533BEAA422E7ED0000C509CA /* MovieDetailOutput.swift in Sources */,
+				533BEA9F22E7D9A900C509CA /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +411,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7UUT6QRU26;
 				INFOPLIST_FILE = "Kobe-TMDB/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -370,7 +419,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.mobile.Kobe-TMDB";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -381,6 +430,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7UUT6QRU26;
 				INFOPLIST_FILE = "Kobe-TMDB/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -388,7 +438,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.mobile.Kobe-TMDB";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
