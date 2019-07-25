@@ -128,7 +128,7 @@
 		533BEA9622E7D71D00C509CA /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				533BEAA722E86C9200C509CA /* UpcomingMoviea */,
+				533BEAA722E86C9200C509CA /* UpcomingMovies */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -153,7 +153,7 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		533BEAA722E86C9200C509CA /* UpcomingMoviea */ = {
+		533BEAA722E86C9200C509CA /* UpcomingMovies */ = {
 			isa = PBXGroup;
 			children = (
 				533BEAB422E87BCA00C509CA /* Cell */,
@@ -165,7 +165,7 @@
 				533BEAB222E877AA00C509CA /* UpcomingMoviesModel.swift */,
 				533BEAB922E8AE6A00C509CA /* UpcomingMoviesService.swift */,
 			);
-			path = UpcomingMoviea;
+			path = UpcomingMovies;
 			sourceTree = "<group>";
 		};
 		533BEAB422E87BCA00C509CA /* Cell */ = {

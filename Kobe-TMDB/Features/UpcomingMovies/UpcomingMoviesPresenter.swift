@@ -16,6 +16,8 @@ final class UpcomingMoviesPresenter {
     
     func attachView(_ view: UpcomingMoviesView) {
         self.view = view
+        
+        view.setNavigationTitle("Upcoming Movies")
     }
     
     func viewWillAppear() {

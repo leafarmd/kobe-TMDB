@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func makeViewController() {
+        navigator.isNavigationBarHidden = true
         let router = UpcomingMoviesRouter(navigator: navigator)
         window.rootViewController = navigator
         window.makeKeyAndVisible()

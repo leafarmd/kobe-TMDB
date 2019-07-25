@@ -10,6 +10,7 @@ import UIKit
 
 class UpcomingMoviesViewController: UIViewController {
 
+    @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     private let presenter: UpcomingMoviesPresenter
@@ -69,7 +70,7 @@ extension UpcomingMoviesViewController: UITableViewDataSource {
 
 extension UpcomingMoviesViewController: UpcomingMoviesView {
     func setNavigationTitle(_ text: String) {
-        navigationItem.title = "Upcoming Movies"
+        labelTitle.text = "Upcoming Movies"
     }
     
     func setMoviesList(_ list: [MoviesModel]) {
