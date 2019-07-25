@@ -10,9 +10,10 @@ import UIKit
 
 protocol UpcomingMoviesView: class {
     func setNavigationTitle(_ text: String)
-    func setMoviesList(_ list: [MoviesModel])
+    func updateMoviesList()
     func startLoadingFeedback()
     func stopLoadingFeedback()
+    func setDataSource(_ datasource: MoviesDataSource)
 }
 
 protocol UpcomingMoviesServiceInput: class {
@@ -32,4 +33,10 @@ protocol UpcomingMoviesRoutering: class {
 protocol UpcomingMoviesCellView: class {
     func setTitle(_ text: String)
     func setImage(_ image: UIImage)
+}
+
+protocol MoviesDataSourceDelegate: class {
+    func fetchNextPage(page: Int)
+    func fetchUpcomingMoviesSucceeded()
+    func fetchUpcomingMoviesFailed(message: String)
 }

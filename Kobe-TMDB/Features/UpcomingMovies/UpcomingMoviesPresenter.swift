@@ -11,38 +11,40 @@ final class UpcomingMoviesPresenter {
     private weak var view: UpcomingMoviesView?
     private let service = UpcomingMoviesService()
     private var movies: [MoviesModel] = []
-    private var totalPages = 1
-    private var page = 1
+    private let dataSource: MoviesDataSource
+    
+    init() {
+        self.dataSource = MoviesDataSource()
+        dataSource.delegate = self
+        service.output = dataSource
+    }
     
     func attachView(_ view: UpcomingMoviesView) {
         self.view = view
         
         view.setNavigationTitle("Upcoming Movies")
+        view.setDataSource(dataSource)
+        view.startLoadingFeedback()
+        service.fetchUpcomingMovies(page: 1)
     }
     
     func viewWillAppear() {
-        service.output = self
-        view?.startLoadingFeedback()
+        
+    }
+    
+    func fetchUpcomingMovies(page: Int) {
         service.fetchUpcomingMovies(page: page)
     }
-    
-    func actualRow(_ row: Int) {
-        if row == movies.count - 1 {
-            page = page + 1
-            view?.startLoadingFeedback()
-            service.fetchUpcomingMovies(page: page)
-        }
-    }
 }
-
-extension UpcomingMoviesPresenter: UpcomingMoviesServiceOutput {
+extension UpcomingMoviesPresenter: MoviesDataSourceDelegate {
+    func fetchNextPage(page: Int) {
+        view?.startLoadingFeedback()
+        fetchUpcomingMovies(page: page)
+    }
     
-    func fetchUpcomingMoviesSucceeded(output: UpcomingMoviesOutput) {
-        totalPages = output.totalPages 
-        output.results.forEach { movies.append(MoviesModel(code: $0.id, name: $0.title, releaseDate: $0.releaseDate, posterPath: $0.posterPath)) }
-        movies.sort(by: { $0.releaseDate < $1.releaseDate })
-        view?.setMoviesList(movies)
+    func fetchUpcomingMoviesSucceeded() {
         view?.stopLoadingFeedback()
+        view?.updateMoviesList()
     }
     
     func fetchUpcomingMoviesFailed(message: String) {

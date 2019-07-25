@@ -14,7 +14,6 @@ class UpcomingMoviesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let presenter: UpcomingMoviesPresenter
-    var movies: [MoviesModel] = []
     
     init(presenter: UpcomingMoviesPresenter) {
         self.presenter = presenter
@@ -27,9 +26,8 @@ class UpcomingMoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.rowHeight = UpcomingMoviesTableViewCell.height
         tableView.delegate = self
-        tableView.dataSource = self
         tableView.register(UpcomingMoviesTableViewCell.nib, forCellReuseIdentifier: UpcomingMoviesTableViewCell.identifier)
     
         presenter.attachView(self)
@@ -46,36 +44,16 @@ extension UpcomingMoviesViewController: UITableViewDelegate {
     
 }
 
-extension UpcomingMoviesViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UpcomingMoviesTableViewCell.identifier) as! UpcomingMoviesTableViewCell
-        
-            let presenter = UpcomingMovieCellPresenter(model: movies[indexPath.row])
-            cell.attachPresenter(presenter)
-        
-        self.presenter.actualRow(indexPath.row)
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UpcomingMoviesTableViewCell.height
-    }
-}
-
 extension UpcomingMoviesViewController: UpcomingMoviesView {
+    func setDataSource(_ datasource: MoviesDataSource) {
+        tableView.dataSource = datasource
+    }
+    
     func setNavigationTitle(_ text: String) {
         labelTitle.text = "Upcoming Movies"
     }
     
-    func setMoviesList(_ list: [MoviesModel]) {
-        movies.append(contentsOf: list)
-        
+    func updateMoviesList() {
         tableView.reloadData()
     }
     
