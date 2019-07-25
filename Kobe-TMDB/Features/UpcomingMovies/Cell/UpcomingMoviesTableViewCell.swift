@@ -8,14 +8,16 @@
 
 import UIKit
 
-class UpcomingMoviesTableViewCell: UITableViewCell {
+final class UpcomingMoviesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelReleaseDate: UILabel!
+    @IBOutlet weak var labelGenres: UILabel!
     @IBOutlet weak var imageViewBackdrop: UIImageView!
     
     static let identifier = "upcomingMovies"
     static let nib = UINib(nibName: "UpcomingMoviesTableViewCell", bundle: nil)
-    static let height: CGFloat = 300
+    static let height: CGFloat = screenSize(regular: 300, reduced: 240)
     var presenter: UpcomingMovieCellPresenter?
     
     func attachPresenter(_ presenter: UpcomingMovieCellPresenter) {
@@ -29,9 +31,17 @@ extension UpcomingMoviesTableViewCell: UpcomingMoviesCellView {
         labelTitle.text = text
     }
     
+    func setGenres(_ text: String) {
+        labelGenres.text = text
+    }
+    
     func setImage(_ image: UIImage) {
         imageViewBackdrop.image = image
         
         layoutSubviews()
+    }
+    
+    func setDate(_ text: String) {
+        labelReleaseDate.text = text
     }
 }

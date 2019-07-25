@@ -29,6 +29,12 @@ final class API {
     
     static func loadImage(from url: String, completion: @escaping API.RequestImageResult) {
         
+        let imagePAth = url
+        
+        if let image = TMDBHolder.shared.cachedImgae[imagePAth] {
+            completion(.success(image))
+        }
+        
         guard let url = URL(string: "\(API.baseImageUrl)\(APIEndpoint.ImageSize.w300)\(url)") else {
             completion(.failure(.invalidData))
             return
@@ -42,6 +48,7 @@ final class API {
                 }
                 
                 DispatchQueue.main.async {
+                    TMDBHolder.shared.cachedImgae[imagePAth] = image
                     completion(.success(image))
                 }
             } catch {

@@ -33,6 +33,8 @@ protocol UpcomingMoviesRoutering: class {
 protocol UpcomingMoviesCellView: class {
     func setTitle(_ text: String)
     func setImage(_ image: UIImage)
+    func setGenres(_ text: String)
+    func setDate(_ text: String)
 }
 
 protocol MoviesDataSourceDelegate: class {

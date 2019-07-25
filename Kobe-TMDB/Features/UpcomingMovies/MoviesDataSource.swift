@@ -10,7 +10,8 @@ import UIKit
 
 final class MoviesDataSource: NSObject {
     
-    var movies: [MoviesModel] = []
+    private var movies: [MovieModel] = []
+    
     weak var delegate: MoviesDataSourceDelegate?
     private var totalPages = 1
     private var page = 1
@@ -49,10 +50,12 @@ extension MoviesDataSource: UpcomingMoviesServiceOutput {
     
     func fetchUpcomingMoviesSucceeded(output: UpcomingMoviesOutput) {
         totalPages = output.totalPages
-        output.results.forEach { movies.append(MoviesModel(code: $0.id,
+        output.results.forEach { movies.append(MovieModel(code: $0.id,
                                                            name: $0.title,
-                                                           releaseDate: $0.releaseDate,
-                                                           posterPath: $0.posterPath)) }
+                                                           overview: $0.overview,
+                                                           releaseDate: Date.fromString( $0.releaseDate),
+                                                           posterPath: $0.posterPath,
+                                                           genres: $0.genreIDS)) }
         
         delegate?.fetchUpcomingMoviesSucceeded()
     }

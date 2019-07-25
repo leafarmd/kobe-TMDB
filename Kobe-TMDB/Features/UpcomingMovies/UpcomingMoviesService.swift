@@ -9,7 +9,7 @@
 import Foundation
 
 final class UpcomingMoviesService: UpcomingMoviesServiceInput {
-    var output: UpcomingMoviesServiceOutput?
+    weak var output: UpcomingMoviesServiceOutput?
     
     func fetchUpcomingMovies(page number: Int) {
         API.request(from: .upcoming(language: API.Language.enUS.type, page: number), type: UpcomingMoviesOutput.self) { [weak self] response in

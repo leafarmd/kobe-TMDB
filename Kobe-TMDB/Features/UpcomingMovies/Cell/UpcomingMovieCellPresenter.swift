@@ -8,10 +8,10 @@
 
 final class UpcomingMovieCellPresenter {
     
-    private let model: MoviesModel
+    private let model: MovieModel
     weak var view: UpcomingMoviesCellView?
     
-    init(model: MoviesModel) {
+    init(model: MovieModel) {
         self.model = model
     }
     
@@ -23,6 +23,20 @@ final class UpcomingMovieCellPresenter {
     
     func setupView() {
         view?.setTitle(model.name)
+        view?.setGenres(model.overview)
+        
+        let date = model.releaseDate?.toString ?? "TBA"
+        view?.setDate("Release Date: \(date)" )
+        
+        if let genres = TMDBHolder.shared.genres {
+            var movieGenres: [String] = []
+            model.genres.forEach {
+                if let genre = genres.genres[$0] {
+                    movieGenres.append(genre)
+                }
+            }
+            view?.setGenres(movieGenres.map{ $0 }.joined(separator: ", "))
+        }
         
         if let url = model.posterPath {
             API.loadImage(from: url) { [weak self] response in

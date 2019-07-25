@@ -6,14 +6,18 @@
 //  Copyright © 2019 Rafael Damasceno. All rights reserved.
 //
 
+import Foundation
+
 struct UpcomingMoviesModel {
-    let movies: [MoviesModel]
+    let movies: [MovieModel]
     let totalPages: Int
 }
 
-struct MoviesModel {
+struct MovieModel {
     let code: Int
     let name: String
-    let releaseDate: String
+    let overview: String
+    let releaseDate: Date?
     let posterPath: String?
+    let genres: [Int]
 }
