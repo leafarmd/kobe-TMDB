@@ -27,20 +27,17 @@ class UpcomingMoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UpcomingMoviesTableViewCell.height
-        tableView.delegate = self
+        
         tableView.register(UpcomingMoviesTableViewCell.nib, forCellReuseIdentifier: UpcomingMoviesTableViewCell.identifier)
     
         presenter.attachView(self)
     }
 }
 
-extension UpcomingMoviesViewController: UITableViewDelegate {
-    
-}
-
 extension UpcomingMoviesViewController: UpcomingMoviesView {
     func setDataSource(_ datasource: MoviesDataSource) {
         tableView.dataSource = datasource
+        tableView.delegate = datasource
     }
     
     func setNavigationTitle(_ text: String) {

@@ -11,10 +11,11 @@ final class UpcomingMoviesPresenter {
     private weak var view: UpcomingMoviesView?
     private let service = UpcomingMoviesService()
     private let interactor = GenreInteractor()
-    private var movies: [MovieModel] = []
     private let dataSource: MoviesDataSource
+    private let router: UpcomingMoviesRouter
     
-    init() {
+    init(router: UpcomingMoviesRouter) {
+        self.router = router
         self.dataSource = MoviesDataSource()
         dataSource.delegate = self
         service.output = dataSource
@@ -34,10 +35,6 @@ final class UpcomingMoviesPresenter {
         view?.startLoadingFeedback()
         service.fetchUpcomingMovies(page: page)
     }
-    
-    private func filterGenres() {
-        
-    }
 }
 extension UpcomingMoviesPresenter: MoviesDataSourceDelegate {
     func fetchNextPage(page: Int) {
@@ -52,6 +49,10 @@ extension UpcomingMoviesPresenter: MoviesDataSourceDelegate {
     
     func fetchUpcomingMoviesFailed(message: String) {
         view?.stopLoadingFeedback()
+    }
+    
+    func selectedMovie(movie: MovieModel) {
+        router.navigateToMovieDetail(model: movie)
     }
 }
 

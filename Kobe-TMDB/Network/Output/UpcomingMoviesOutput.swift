@@ -51,7 +51,7 @@ struct ResultOutput: Decodable {
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
         case genreIDS = "genre_ids"
-        case backdropPath = "backdrop path"
+        case backdropPath = "backdrop_path"
         case adult
         case overview
         case releaseDate = "release_date"

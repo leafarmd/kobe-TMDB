@@ -8,23 +8,53 @@
 
 import UIKit
 
-class MovieDetailViewController: UIViewController {
+final class MovieDetailViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var labelText: UILabel!
+    @IBOutlet weak var labelGenres: UILabel!
+    @IBOutlet weak var labelReleaseDate: UILabel!
+    @IBOutlet weak var labelOverview: UILabel!
+    
+    private let presenter: MovieDetailPresenter
+    
+    init(presenter: MovieDetailPresenter) {
+        self.presenter = presenter
+        
+        super.init(nibName: "MovieDetailViewController", bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) {return nil}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        presenter.attachView(self)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func backTouched(_ sender: Any) {
+        presenter.goBack()
     }
-    */
+}
 
+extension MovieDetailViewController: MovieDetailView {
+    func setTitle(_ text: String) {
+        labelText.text = text
+    }
+    
+    func setReleaseDate(_ text: String) {
+        labelReleaseDate.text = text
+    }
+    
+    func setOverview(_ text: String) {
+        labelOverview.text = text
+    }
+    
+    func setImage(_ image: UIImage) {
+        imageView.image = image
+    }
+    
+    func setGenre(_ text: String) {
+        labelGenres.text = text
+    }
 }

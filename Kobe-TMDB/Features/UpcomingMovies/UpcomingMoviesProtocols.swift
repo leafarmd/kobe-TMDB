@@ -41,4 +41,5 @@ protocol MoviesDataSourceDelegate: class {
     func fetchNextPage(page: Int)
     func fetchUpcomingMoviesSucceeded()
     func fetchUpcomingMoviesFailed(message: String)
+    func selectedMovie(movie: MovieModel)
 }

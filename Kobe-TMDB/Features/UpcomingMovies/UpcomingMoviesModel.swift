@@ -20,4 +20,5 @@ struct MovieModel {
     let releaseDate: Date?
     let posterPath: String?
     let genres: [Int]
+    let backdrop: String?
 }

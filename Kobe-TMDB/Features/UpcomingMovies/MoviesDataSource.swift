@@ -24,6 +24,12 @@ final class MoviesDataSource: NSObject {
     }
 }
 
+extension MoviesDataSource: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.selectedMovie(movie: movies[indexPath.row])
+    }
+}
+
 extension MoviesDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +61,8 @@ extension MoviesDataSource: UpcomingMoviesServiceOutput {
                                                            overview: $0.overview,
                                                            releaseDate: Date.fromString( $0.releaseDate),
                                                            posterPath: $0.posterPath,
-                                                           genres: $0.genreIDS)) }
+                                                           genres: $0.genreIDS,
+                                                           backdrop: $0.backdropPath)) }
         
         delegate?.fetchUpcomingMoviesSucceeded()
     }

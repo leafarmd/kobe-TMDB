@@ -11,16 +11,25 @@ import UIKit
 final class UpcomingMoviesRouter: UpcomingMoviesRoutering {
     
     private let navigator: UINavigationController
+    var router: MovieDetailRouter?
     
     init(navigator: UINavigationController) {
         self.navigator = navigator
     }
     
     func makeViewController() -> UIViewController {
-        let presenter = UpcomingMoviesPresenter()
+        let presenter = UpcomingMoviesPresenter(router: self)
         let viewController = UpcomingMoviesViewController(presenter: presenter)
         
         return viewController
+    }
+    
+    func navigateToMovieDetail(model: MovieModel) {
+        let router = MovieDetailRouter(navigator: navigator, model: model)
+        
+        navigator.pushViewController(router.makeViewController(), animated: true)
+        
+        self.router = router
     }
 }
 

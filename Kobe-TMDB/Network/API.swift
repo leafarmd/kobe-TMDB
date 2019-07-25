@@ -27,7 +27,7 @@ final class API {
         
     }
     
-    static func loadImage(from url: String, completion: @escaping API.RequestImageResult) {
+    static func loadImage(from url: String, size: APIEndpoint.ImageSize = .w300,  completion: @escaping API.RequestImageResult) {
         
         let imagePAth = url
         
@@ -35,7 +35,7 @@ final class API {
             completion(.success(image))
         }
         
-        guard let url = URL(string: "\(API.baseImageUrl)\(APIEndpoint.ImageSize.w300)\(url)") else {
+        guard let url = URL(string: "\(API.baseImageUrl)\(size)\(url)") else {
             completion(.failure(.invalidData))
             return
         }
