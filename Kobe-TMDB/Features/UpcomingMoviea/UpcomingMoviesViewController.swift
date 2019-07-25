@@ -13,7 +13,7 @@ class UpcomingMoviesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let presenter: UpcomingMoviesPresenter
-    var movies: [MoviesModel]?
+    var movies: [MoviesModel] = []
     
     init(presenter: UpcomingMoviesPresenter) {
         self.presenter = presenter
@@ -48,15 +48,16 @@ extension UpcomingMoviesViewController: UITableViewDelegate {
 extension UpcomingMoviesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies?.count ?? 0
+        return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UpcomingMoviesTableViewCell.identifier, for: indexPath) as! UpcomingMoviesTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: UpcomingMoviesTableViewCell.identifier) as! UpcomingMoviesTableViewCell
         
-        cell.labelTitle?.text = movies?[indexPath.item].name
+            let presenter = UpcomingMovieCellPresenter(model: movies[indexPath.row])
+            cell.attachPresenter(presenter)
         
-        presenter.actualRow(indexPath.row)
+        self.presenter.actualRow(indexPath.row)
         
         return cell
     }
@@ -68,16 +69,17 @@ extension UpcomingMoviesViewController: UITableViewDataSource {
 
 extension UpcomingMoviesViewController: UpcomingMoviesView {
     func setNavigationTitle(_ text: String) {
-        
+        navigationItem.title = "Upcoming Movies"
     }
     
     func setMoviesList(_ list: [MoviesModel]) {
-        movies = list
+        movies.append(contentsOf: list)
+        
         tableView.reloadData()
     }
     
     func startLoadingFeedback() {
-        Loading.start(actualView: view)
+        Loading.start()
     }
     
     func stopLoadingFeedback() {

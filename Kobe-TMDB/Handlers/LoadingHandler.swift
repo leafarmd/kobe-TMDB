@@ -25,7 +25,7 @@ struct Loading {
         loadingView.bringSubviewToFront(activityIndicator)
     }
     
-    static func start(actualView: UIView) {
+    static func start() {
         createLoadingView()
         activityIndicator.startAnimating()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true

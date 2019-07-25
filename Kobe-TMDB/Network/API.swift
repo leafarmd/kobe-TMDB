@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 final class API {
     
+    static let baseImageUrl = "https://image.tmdb.org/t/p/"
     private static let baseUrl = "https://api.themoviedb.org/3/"
     private static let apiKey = "1f54bd990f1cdfb230adb312546d765d"
     
@@ -23,6 +25,29 @@ final class API {
                 method: method,
                 completion: completion)
         
+    }
+    
+    static func loadImage(from url: String, completion: @escaping API.RequestImageResult) {
+        
+        guard let url = URL(string: "\(API.baseImageUrl)\(APIEndpoint.ImageSize.w300)\(url)") else {
+            completion(.failure(.invalidData))
+            return
+        }
+        DispatchQueue.global().async {
+            do {
+                let data = try Data(contentsOf: url)
+                guard let image = UIImage(data: data) else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    completion(.success(image))
+                }
+            } catch {
+                completion(.failure(.invalidData))
+            }
+        }
     }
     
     private static func request<T: Decodable>(from endpoint: String,

@@ -37,7 +37,7 @@ extension UpcomingMoviesPresenter: UpcomingMoviesServiceOutput {
     
     func fetchUpcomingMoviesSucceeded(output: UpcomingMoviesOutput) {
         totalPages = output.totalPages 
-        output.results.forEach { movies.append(MoviesModel(code: $0.id, name: $0.title, releaseDate: $0.releaseDate, posterPath: $0.backdropPath)) }
+        output.results.forEach { movies.append(MoviesModel(code: $0.id, name: $0.title, releaseDate: $0.releaseDate, posterPath: $0.posterPath)) }
         movies.sort(by: { $0.releaseDate < $1.releaseDate })
         view?.setMoviesList(movies)
         view?.stopLoadingFeedback()

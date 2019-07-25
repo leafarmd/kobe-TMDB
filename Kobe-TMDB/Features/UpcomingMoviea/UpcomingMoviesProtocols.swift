@@ -28,3 +28,8 @@ protocol UpcomingMoviesServiceOutput: class {
 protocol UpcomingMoviesRoutering: class {
     func makeViewController() -> UIViewController
 }
+
+protocol UpcomingMoviesCellView: class {
+    func setTitle(_ text: String)
+    func setImage(_ image: UIImage)
+}

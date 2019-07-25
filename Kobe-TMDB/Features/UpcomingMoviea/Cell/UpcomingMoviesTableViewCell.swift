@@ -15,9 +15,23 @@ class UpcomingMoviesTableViewCell: UITableViewCell {
     
     static let identifier = "upcomingMovies"
     static let nib = UINib(nibName: "UpcomingMoviesTableViewCell", bundle: nil)
-    static let height: CGFloat = 200
+    static let height: CGFloat = 300
+    var presenter: UpcomingMovieCellPresenter?
     
-    func setup() {
+    func attachPresenter(_ presenter: UpcomingMovieCellPresenter) {
+        self.presenter = presenter
+        presenter.attachView(self)
+    }
+}
+
+extension UpcomingMoviesTableViewCell: UpcomingMoviesCellView {
+    func setTitle(_ text: String) {
+        labelTitle.text = text
+    }
+    
+    func setImage(_ image: UIImage) {
+        imageViewBackdrop.image = image
         
+        layoutSubviews()
     }
 }
