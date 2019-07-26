@@ -28,7 +28,4 @@ final class MovieDetailRouter: MovieDetailRoutering {
     func goBack() {
         navigator.popViewController(animated: true)
     }
-    
-    
-    
 }
