@@ -6,8 +6,6 @@
 //  Copyright © 2019 Rafael Damasceno. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 struct Loading {

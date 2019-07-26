@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 final class SearchMovieRouter: SearchMoviesRoutering {
     
     private let navigator: UINavigationController

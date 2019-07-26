@@ -6,10 +6,9 @@
 //  Copyright © 2019 Rafael Damasceno. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class TMDBHolder {
+final class TMDBHolder {
     
     static private(set) var shared = TMDBHolder()
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UpcomingMoviesViewController: UIViewController {
+final class UpcomingMoviesViewController: UIViewController {
 
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!

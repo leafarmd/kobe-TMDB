@@ -6,8 +6,6 @@
 //  Copyright © 2019 Rafael Damasceno. All rights reserved.
 //
 
-import Foundation
-
 final class UpcomingMoviesService: UpcomingMoviesServiceInput {
     weak var output: UpcomingMoviesServiceOutput?
     
@@ -24,6 +22,4 @@ final class UpcomingMoviesService: UpcomingMoviesServiceInput {
             }
         }
     }
-    
-    
 }

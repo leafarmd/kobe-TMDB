@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchMoviesViewController: UIViewController {
+final class SearchMoviesViewController: UIViewController {
     
     @IBOutlet weak var textInput: UITextField!
     @IBOutlet weak var tableView: UITableView!

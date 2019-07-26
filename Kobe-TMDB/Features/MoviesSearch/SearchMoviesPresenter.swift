@@ -10,7 +10,6 @@ import Foundation
 
 final class SearchMoviesPresenter {
     
-    
     weak var view: SearchMoviesView?
     private var totalPages = 1
     private var page = 1

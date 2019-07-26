@@ -6,8 +6,6 @@
 //  Copyright © 2019 Rafael Damasceno. All rights reserved.
 //
 
-import Foundation
-
 protocol GenresServiceInput: class {
     var output: GenresServiceOutput? { get }
     func fetchGenres()
