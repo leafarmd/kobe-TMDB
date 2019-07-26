@@ -13,3 +13,9 @@ This application was made with protocol oriented MVP architecture.
 ## Installation
 
 > just build & run
+
+## TO DO
+>  Design improvements
+>  Unit tests
+>  LaunchScreen
+>  String Internationalization
