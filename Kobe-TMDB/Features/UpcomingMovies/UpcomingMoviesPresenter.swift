@@ -35,6 +35,10 @@ final class UpcomingMoviesPresenter {
         view?.startLoadingFeedback()
         service.fetchUpcomingMovies(page: page)
     }
+    
+    func presentSearchMovies() {
+        router.navigateToSearchMovies()
+    }
 }
 extension UpcomingMoviesPresenter: MoviesDataSourceDelegate {
     func fetchNextPage(page: Int) {

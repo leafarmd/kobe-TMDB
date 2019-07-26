@@ -56,5 +56,4 @@ extension API {
     typealias RequestResult<T> = Result<T, RequestError, APIError>
     typealias RequestImageResult = (Result<UIImage, RequestError, APIError>) -> Void
     typealias CompletionCallback<T: Decodable> = (RequestResult<T>) -> Void
-    
 }

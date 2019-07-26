@@ -12,6 +12,7 @@ final class UpcomingMoviesRouter: UpcomingMoviesRoutering {
     
     private let navigator: UINavigationController
     var router: MovieDetailRouter?
+    var searchRouter: SearchMovieRouter?
     
     init(navigator: UINavigationController) {
         self.navigator = navigator
@@ -30,6 +31,14 @@ final class UpcomingMoviesRouter: UpcomingMoviesRoutering {
         navigator.pushViewController(router.makeViewController(), animated: true)
         
         self.router = router
+    }
+    
+    func navigateToSearchMovies() {
+        let router = SearchMovieRouter(navigator: navigator)
+        
+        navigator.pushViewController(router.makeViewController(), animated: true)
+        
+        searchRouter = router
     }
 }
 

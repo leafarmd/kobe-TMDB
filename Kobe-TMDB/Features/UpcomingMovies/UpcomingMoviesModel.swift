@@ -22,3 +22,8 @@ struct MovieModel {
     let genres: [Int]
     let backdrop: String?
 }
+
+struct SearchModel {
+    let code: Int
+    let name: String
+}

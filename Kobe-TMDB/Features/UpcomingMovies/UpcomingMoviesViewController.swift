@@ -32,6 +32,9 @@ class UpcomingMoviesViewController: UIViewController {
     
         presenter.attachView(self)
     }
+    @IBAction func searchTouched(_ sender: Any) {
+        presenter.presentSearchMovies()
+    }
 }
 
 extension UpcomingMoviesViewController: UpcomingMoviesView {
