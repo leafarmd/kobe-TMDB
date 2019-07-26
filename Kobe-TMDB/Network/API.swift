@@ -104,7 +104,7 @@ final class API {
                 } catch {
                     do {
                         let errorType = try decoder.decode(APIError.self, from: data)
-                        completion(.other(errorType))
+                        completion(.APIError(errorType))
                     } catch {
                         completion(.failure(.decodingFailed))
                     }

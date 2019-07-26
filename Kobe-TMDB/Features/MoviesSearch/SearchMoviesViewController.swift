@@ -38,8 +38,6 @@ class SearchMoviesViewController: UIViewController {
         presenter.attachView(self)
         
         setupKeyboardButton(with: "OK")
-        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyBoard))
-        view.addGestureRecognizer(tap)
     }
     
     private func setupKeyboardButton(with title: String) {
@@ -67,7 +65,6 @@ class SearchMoviesViewController: UIViewController {
 
 extension SearchMoviesViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
         if let text = textField.text {
             presenter.searchFor(query: "\(text)\(string)")
         }
@@ -76,7 +73,10 @@ extension SearchMoviesViewController: UITextFieldDelegate {
 }
 
 extension SearchMoviesViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.selectedMovie(movie: movies[indexPath.row])
+        hideKeyBoard()
+    }
 }
 
 extension SearchMoviesViewController: UITableViewDataSource {

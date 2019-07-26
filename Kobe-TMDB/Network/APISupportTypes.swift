@@ -22,10 +22,10 @@ extension API {
         }
     }
     
-    enum Result<Success, Failure, Other> where Failure : Error {
+    enum Result<Success, Failure, APIError> where Failure : Error {
         case success(Success)
         case failure(Failure)
-        case other(Other)
+        case APIError(APIError)
     }
     
     enum RequestError: Error {

@@ -37,8 +37,8 @@ final class SearchMoviesPresenter {
     }
     
     func searchFor(query: String) {
-        if query.count > 3 {
-            reset()
+        reset()
+        if query.count >= 3 {
             self.query = query
             view?.startLoadingFeedback()
             service.fetchSearchMovie(string: query, page: 1)
@@ -49,10 +49,16 @@ final class SearchMoviesPresenter {
         router.gobBack()
     }
     
+    func selectedMovie(movie: MovieModel) {
+        router.navigateToMovieDetail(model: movie)
+    }
+    
     private func reset() {
         totalPages = 1
         page = 1
         movies = []
+        
+        view?.updateMoviesList(movies: movies)
     }
 }
 

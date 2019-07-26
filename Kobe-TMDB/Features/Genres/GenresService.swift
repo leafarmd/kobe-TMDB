@@ -17,7 +17,7 @@ final class GenresService: GenresServiceInput {
             switch response {
             case .success(let result):
                 self?.output?.fetchGenresSucceeded(output: result.genres)
-            case .failure(_), .other(_):
+            case .failure(_), .APIError(_):
                 self?.output?.fetchGenresFailed(message: "failed request movie genres")
             }
         }

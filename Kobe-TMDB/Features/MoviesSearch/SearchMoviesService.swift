@@ -14,7 +14,7 @@ final class SearchMoviesService: SearchMoviesServiceInput {
             switch response {
             case .success(let result):
                 self?.output?.fetchSearcMoviesSucceeded(output: result)
-            case .failure(_), .other(_):
+            case .failure(_), .APIError(_):
                 self?.output?.fetchSearchMoviesFailed(message: "movies search failed")
             }
             

@@ -19,7 +19,7 @@ final class UpcomingMoviesService: UpcomingMoviesServiceInput {
                 self?.output?.fetchUpcomingMoviesSucceeded(output: result)
             case .failure(let failure):
                 self?.output?.fetchUpcomingMoviesFailed(message: failure.message)
-            case .other(let error):
+            case .APIError(let error):
                 self?.output?.fetchUpcomingMoviesFailed(message: error.message ?? "unknow error")
             }
         }
