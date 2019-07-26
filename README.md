@@ -6,9 +6,9 @@
 This application was made with protocol oriented MVP architecture. 
 
 ## Preview
-![](/Images/TMDB1.png)
-![](/Images/TMDB2.png)
-![](/Images/TMDB.gif)
+![](/Screenshots/TMDB1.png)
+![](/Screenshots/TMDB2.png)
+![](/Screenshots/TMDB.gif)
 
 ## Installation
 
