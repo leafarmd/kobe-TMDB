@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1FAC96963D9AE4D78DAACA42 /* Pods_Kobe_TMDBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F69BD93F48F4EF09D3B6D2 /* Pods_Kobe_TMDBTests.framework */; };
 		533BEA9822E7D72E00C509CA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BEA9722E7D72E00C509CA /* API.swift */; };
 		533BEA9B22E7D81200C509CA /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BEA9A22E7D81200C509CA /* APIEndpoint.swift */; };
 		533BEA9D22E7D97C00C509CA /* APISupportTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BEA9C22E7D97C00C509CA /* APISupportTypes.swift */; };
@@ -52,7 +51,6 @@
 		53D1E45F22EA87CB006955F7 /* SearchMoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D1E45E22EA87CB006955F7 /* SearchMoviesService.swift */; };
 		53D1E46122EA903A006955F7 /* SearchMoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D1E46022EA903A006955F7 /* SearchMoviesRouter.swift */; };
 		53D1E46A22EB28C5006955F7 /* SearchOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D1E46922EB28C5006955F7 /* SearchOutput.swift */; };
-		6CA993564DB2C42C707FFF34 /* Pods_Kobe_TMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2256997B0CC7DAF4732F00 /* Pods_Kobe_TMDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15F69BD93F48F4EF09D3B6D2 /* Pods_Kobe_TMDBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kobe_TMDBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A955FBFD8A8071452D6A971 /* Pods-Kobe-TMDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kobe-TMDB.debug.xcconfig"; path = "Target Support Files/Pods-Kobe-TMDB/Pods-Kobe-TMDB.debug.xcconfig"; sourceTree = "<group>"; };
 		533BEA9722E7D72E00C509CA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		533BEA9A22E7D81200C509CA /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		533BEA9C22E7D97C00C509CA /* APISupportTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISupportTypes.swift; sourceTree = "<group>"; };
@@ -116,10 +112,6 @@
 		53D1E45E22EA87CB006955F7 /* SearchMoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviesService.swift; sourceTree = "<group>"; };
 		53D1E46022EA903A006955F7 /* SearchMoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviesRouter.swift; sourceTree = "<group>"; };
 		53D1E46922EB28C5006955F7 /* SearchOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchOutput.swift; sourceTree = "<group>"; };
-		7B0F151B27CD4DC7D4D981BE /* Pods-Kobe-TMDBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kobe-TMDBTests.debug.xcconfig"; path = "Target Support Files/Pods-Kobe-TMDBTests/Pods-Kobe-TMDBTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CB2256997B0CC7DAF4732F00 /* Pods_Kobe_TMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kobe_TMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBB7031AE8EB5263A18587D9 /* Pods-Kobe-TMDBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kobe-TMDBTests.release.xcconfig"; path = "Target Support Files/Pods-Kobe-TMDBTests/Pods-Kobe-TMDBTests.release.xcconfig"; sourceTree = "<group>"; };
-		E734AA4DBFB7635D5F4819EA /* Pods-Kobe-TMDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kobe-TMDB.release.xcconfig"; path = "Target Support Files/Pods-Kobe-TMDB/Pods-Kobe-TMDB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CA993564DB2C42C707FFF34 /* Pods_Kobe_TMDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +126,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FAC96963D9AE4D78DAACA42 /* Pods_Kobe_TMDBTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,10 +135,6 @@
 		1F82E7AB5C2359668B145038 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3A955FBFD8A8071452D6A971 /* Pods-Kobe-TMDB.debug.xcconfig */,
-				E734AA4DBFB7635D5F4819EA /* Pods-Kobe-TMDB.release.xcconfig */,
-				7B0F151B27CD4DC7D4D981BE /* Pods-Kobe-TMDBTests.debug.xcconfig */,
-				DBB7031AE8EB5263A18587D9 /* Pods-Kobe-TMDBTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -249,7 +235,6 @@
 				53C2BE3722E7D552006C8D0B /* Kobe-TMDBTests */,
 				53C2BE2122E7D54F006C8D0B /* Products */,
 				1F82E7AB5C2359668B145038 /* Pods */,
-				C71780B1A5D8AC9E2B977CF0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -321,15 +306,6 @@
 			path = MovieDetail;
 			sourceTree = "<group>";
 		};
-		C71780B1A5D8AC9E2B977CF0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CB2256997B0CC7DAF4732F00 /* Pods_Kobe_TMDB.framework */,
-				15F69BD93F48F4EF09D3B6D2 /* Pods_Kobe_TMDBTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,7 +313,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53C2BE3D22E7D552006C8D0B /* Build configuration list for PBXNativeTarget "Kobe-TMDB" */;
 			buildPhases = (
-				35AE8854BA1BAEF58F4F9397 /* [CP] Check Pods Manifest.lock */,
 				53C2BE1C22E7D54F006C8D0B /* Sources */,
 				53C2BE1D22E7D54F006C8D0B /* Frameworks */,
 				53C2BE1E22E7D54F006C8D0B /* Resources */,
@@ -355,7 +330,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53C2BE4022E7D552006C8D0B /* Build configuration list for PBXNativeTarget "Kobe-TMDBTests" */;
 			buildPhases = (
-				5040A257C2475BD3F82EAC53 /* [CP] Check Pods Manifest.lock */,
 				53C2BE3022E7D552006C8D0B /* Sources */,
 				53C2BE3122E7D552006C8D0B /* Frameworks */,
 				53C2BE3222E7D552006C8D0B /* Resources */,
@@ -430,53 +404,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		35AE8854BA1BAEF58F4F9397 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Kobe-TMDB-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5040A257C2475BD3F82EAC53 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Kobe-TMDBTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		53C2BE1C22E7D54F006C8D0B /* Sources */ = {
@@ -671,7 +598,6 @@
 		};
 		53C2BE3E22E7D552006C8D0B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A955FBFD8A8071452D6A971 /* Pods-Kobe-TMDB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -691,7 +617,6 @@
 		};
 		53C2BE3F22E7D552006C8D0B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E734AA4DBFB7635D5F4819EA /* Pods-Kobe-TMDB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -711,7 +636,6 @@
 		};
 		53C2BE4122E7D552006C8D0B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B0F151B27CD4DC7D4D981BE /* Pods-Kobe-TMDBTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -733,7 +657,6 @@
 		};
 		53C2BE4222E7D552006C8D0B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBB7031AE8EB5263A18587D9 /* Pods-Kobe-TMDBTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
