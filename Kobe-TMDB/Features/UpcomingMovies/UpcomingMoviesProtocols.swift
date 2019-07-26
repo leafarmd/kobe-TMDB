@@ -14,6 +14,7 @@ protocol UpcomingMoviesView: class {
     func startLoadingFeedback()
     func stopLoadingFeedback()
     func setDataSource(_ datasource: MoviesDataSource)
+    func presenterError(message: String)
 }
 
 protocol UpcomingMoviesServiceInput: class {

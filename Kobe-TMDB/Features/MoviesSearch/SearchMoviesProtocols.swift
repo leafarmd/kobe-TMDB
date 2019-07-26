@@ -12,6 +12,7 @@ protocol SearchMoviesView: class {
     func updateMoviesList(movies: [MovieModel])
     func startLoadingFeedback()
     func stopLoadingFeedback()
+    func presenterError(message: String)
 }
 
 protocol SearchMoviesServiceInput: class {

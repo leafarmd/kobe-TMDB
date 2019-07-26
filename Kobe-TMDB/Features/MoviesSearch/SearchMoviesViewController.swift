@@ -116,4 +116,7 @@ extension SearchMoviesViewController: SearchMoviesView {
         Loading.stop()
     }
     
+    func presenterError(message: String) {
+        showAlert(title: "Error", message: message)
+    }
 }

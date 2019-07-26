@@ -78,8 +78,8 @@ extension SearchMoviesPresenter: SearchMoviesServiceOutput {
     }
     
     func fetchSearchMoviesFailed(message: String) {
-        // TODO: treat error message
         view?.stopLoadingFeedback()
+        view?.presenterError(message: message)
     }
 }
 

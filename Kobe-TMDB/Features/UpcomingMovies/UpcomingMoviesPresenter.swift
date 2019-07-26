@@ -53,6 +53,7 @@ extension UpcomingMoviesPresenter: MoviesDataSourceDelegate {
     
     func fetchUpcomingMoviesFailed(message: String) {
         view?.stopLoadingFeedback()
+        view?.presenterError(message: message)
     }
     
     func selectedMovie(movie: MovieModel) {

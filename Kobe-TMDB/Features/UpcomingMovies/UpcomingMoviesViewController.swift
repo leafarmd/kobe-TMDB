@@ -59,4 +59,7 @@ extension UpcomingMoviesViewController: UpcomingMoviesView {
         Loading.stop()
     }
     
+    func presenterError(message: String) {
+        showAlert(title: "Error", message: message)
+    }
 }
