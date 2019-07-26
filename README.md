@@ -6,8 +6,8 @@
 This application was made with protocol oriented MVP architecture. 
 
 ## Preview
-![](/Images/TMDB1.png | width=375)
-![](/Images/TMDB2.png | width=375)
+![](/Images/TMDB1.png) {:height="50%" width="50%"}
+![](/Images/TMDB2.png) {:height="50%" width="50%"}
 ![](/Images/TMDB.gif)
 
 ## Installation
